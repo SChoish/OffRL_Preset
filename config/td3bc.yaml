@@ -1,0 +1,25 @@
+device: null
+steps: 1000000
+batch_size: 256
+seed: 0
+d4rl: hopper-medium-v2
+
+gamma: 0.99
+tau: 0.005
+policy_noise: 0.2
+noise_clip: 0.5
+policy_delay: 2
+alpha: 2.5
+lr_actor: 3.0e-4
+lr_critic: 3.0e-4
+
+eval_episodes: 10
+eval_every: 10000
+
+log_every_ratio: 20
+log_dir: null
+run_name: null
+# 결과 루트: null/빈 문자열이면 파일 저장 안 함(콘솔만)
+output_root: results
+# 0이면 중간 체크포인트 없음, 마지막은 항상 checkpoints/final.pth
+checkpoint_every: 500000
