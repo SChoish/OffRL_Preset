@@ -22,12 +22,7 @@ from offrl.core import TransitionBatch
 
 
 def _reexec_under_nohup_linux() -> None:
-    """
-    Linux 기본: 동일 명령을 nohup으로 다시 실행해 터미널 종료(SIGHUP) 후에도 학습이 이어지게 한다.
-    - OFFRL_NO_NOHUP=1 이면 생략 (IDE/디버그/포그라운드)
-    - OFFRL_INSIDE_NOHUP=1 이면 이미 nohup 경유로 간주
-    stdout이 터미널이면 nohup이 보통 ./nohup.out 로 붙인다.
-    """
+    """Linux 기본: nohup으로 실행. OFFRL_NO_NOHUP=1이면 생략."""
     if sys.platform != "linux":
         return
     if os.environ.get("OFFRL_NO_NOHUP") == "1":

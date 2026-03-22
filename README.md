@@ -20,9 +20,9 @@ python run.py --algo td3bc --d4rl halfcheetah-medium-v2
 
 ### Linux / nohup
 
-`python run.py`와 `python -m offrl`은 기본으로 **같은 명령을 `nohup`으로 한 번 더 실행**합니다. SSH를 끊어도(SIGHUP) 학습이 이어지고, 터미널에 stdout이 붙어 있으면 출력이 **`./nohup.out`**으로 이어지는 경우가 많습니다.
+Linux에서는 `python run.py` / `python -m offrl`이 기본으로 **nohup으로** 돕니다. 출력은 종종 **`./nohup.out`**으로 붙습니다.
 
-IDE 디버그·포그라운드만 쓰려면:
+끄려면:
 
 ```bash
 OFFRL_NO_NOHUP=1 python run.py --algo td3bc
